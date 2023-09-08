@@ -1,0 +1,10 @@
+[package]
+name = "XRenderFormUtils"
+version = "0.0.1"
+
+[addresses]
+xrender_form_utils = "_"
+
+[dependencies]
+AptosFramework = { git = "https://github.com/aptos-labs/aptos-core.git", subdir = "aptos-move/framework/aptos-framework", rev = "main" }
+
