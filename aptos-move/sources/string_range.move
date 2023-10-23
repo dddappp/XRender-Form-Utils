@@ -17,16 +17,17 @@ module xrender_form_utils::string_range {
         start: String,
         end: String,
     ): StringRange {
+        validate(&start, &end);
         let string_range = StringRange {
             start,
             end,
         };
-        validate(&string_range);
         string_range
     }
 
-    fun validate(string_range: &StringRange) {
-        let _ = string_range;
+    fun validate(start: &String, end: &String) {
+        let _ = start;
+        let _ = end;
     }
 
     public fun start(string_range: &StringRange): String {
@@ -36,6 +37,5 @@ module xrender_form_utils::string_range {
     public fun end(string_range: &StringRange): String {
         string_range.end
     }
-
 }
 
