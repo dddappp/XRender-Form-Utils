@@ -67,7 +67,7 @@ module xrender_form_utils::time {
     }
 
     public fun less_than(): u8 {
-        less_than()
+        LessThan
     }
 
     fun validate(

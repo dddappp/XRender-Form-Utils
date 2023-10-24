@@ -67,7 +67,7 @@ module xrender_form_utils::date {
     }
 
     public fun less_than(): u8 {
-        less_than()
+        LessThan
     }
 
     fun validate(
@@ -80,13 +80,14 @@ module xrender_form_utils::date {
         assert!(day >= 1 && day <= days_in_month, EInvalidDay);
     }
 
+    const DaysInMonth: vector<u8> = vector[31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+
     fun days_in_month(year: u16, month: u8): u8 {
-        let days: vector<u8> = vector[31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
         assert!(month >= 1 && month <= 12, EInvalidMonth);
         if (month == 2 && is_leap_year(year)) {
             return 29
         };
-        return *vector::borrow(&days, (month as u64) - 1)
+        return *vector::borrow(&DaysInMonth, (month as u64) - 1)
     }
 
     fun is_leap_year(year: u16): bool {
