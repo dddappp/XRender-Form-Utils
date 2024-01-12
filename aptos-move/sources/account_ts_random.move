@@ -24,7 +24,7 @@ module xrender_form_utils::account_ts_random {
         total_amount: u64, // Total (remaining) amount
         total_shares: u64, // Number of total (remaining) shares
         max_shares: u64, // Maximum number of shares per account
-        min_amount: u64, //Minimum amount
+        min_amount: u64, // Minimum amount
     ): u64 {
         if (total_shares == 1) {
             return total_amount
